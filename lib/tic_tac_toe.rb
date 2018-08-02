@@ -26,6 +26,27 @@ def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
+
+def turn_count(board)
+  
+  counter = 0
+  board.each do |space|
+   counter +=1 if space == "X" || space == "O"  
+
+end
+counter
+end
+
+def current_player(board)
+if turn_count(board) % 2 == 0
+  return "X"
+else 
+  return "O"
+end
+end
+
+
+
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
